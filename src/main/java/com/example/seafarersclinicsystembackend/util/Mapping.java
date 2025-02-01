@@ -5,11 +5,12 @@ import com.example.seafarersclinicsystembackend.entity.impl.PatientEntity;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 
-@CrossOrigin
+@Component
 public class Mapping {
     @Autowired
     private ModelMapper modelMapper;

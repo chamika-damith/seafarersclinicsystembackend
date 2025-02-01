@@ -18,10 +18,4 @@ public class PatientDTO implements SuperDTO {
     private String seamanBookNumber;
     private String vesselName;
     private String company;
-
-    // Medical Records
-    private List<MedicalRecordDTO> medicalRecords;
-
-    // Appointments
-    private List<AppointmentDTO> appointments;
 }

@@ -25,7 +25,7 @@ public class PatientServiceImpl implements PatientService {
     @Override
     public void save(PatientDTO dto) {
         PatientEntity patientEntity = mapping.toPatientEntity(dto);
-
+        System.out.println(patientEntity);
         patientDao.save(patientEntity);
     }
 
