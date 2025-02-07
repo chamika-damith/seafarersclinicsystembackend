@@ -1,21 +1,17 @@
 package com.example.seafarersclinicsystembackend.dto.impl;
 
 import com.example.seafarersclinicsystembackend.dto.SuperDTO;
-import com.example.seafarersclinicsystembackend.util.AppointmentType;
-import com.example.seafarersclinicsystembackend.util.AppointmentStatus;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-class AppointmentDTO implements SuperDTO {
+public class AppointmentDTO implements SuperDTO {
     private String id;
-    private String patientId;
+    private PatientDTO patientId;
     private String date;
     private String time;
-    private AppointmentType type;
-    private AppointmentStatus status;
+    private String appointmentType;
+    private String appointmentStatus;
     private String notes;
 }

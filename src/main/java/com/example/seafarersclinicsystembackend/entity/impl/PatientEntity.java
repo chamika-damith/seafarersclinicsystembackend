@@ -36,4 +36,6 @@ public class PatientEntity implements SuperEntity {
 
     private String company;
 
+    @OneToMany(mappedBy = "patientId", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<AppointmentEntity> appointments = new ArrayList<>();
 }

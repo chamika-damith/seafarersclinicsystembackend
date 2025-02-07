@@ -1,8 +1,7 @@
 package com.example.seafarersclinicsystembackend.entity.impl;
 
+import com.example.seafarersclinicsystembackend.dto.impl.AppointmentDTO;
 import com.example.seafarersclinicsystembackend.entity.SuperEntity;
-import com.example.seafarersclinicsystembackend.entity.impl.PatientEntity;
-import com.example.seafarersclinicsystembackend.util.MaritimeFitnessStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,7 +18,6 @@ import java.util.List;
 public class MedicalRecordEntity implements SuperEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
     @Column(nullable = false)
@@ -45,11 +43,10 @@ public class MedicalRecordEntity implements SuperEntity {
     @Column(name = "doctor_notes", length = 2000)
     private String doctorNotes;
 
-    @Enumerated(EnumType.STRING)
     @Column(name = "maritime_fitness_status", nullable = false)
-    private MaritimeFitnessStatus maritimeFitnessStatus;
+    private String  maritimeFitnessStatus;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "patient_id", nullable = false)
-    private PatientEntity patient;
+    @JoinColumn(name = "appointmentId", nullable = false)
+    private AppointmentEntity appointment;
 }
